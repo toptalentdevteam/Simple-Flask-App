@@ -1,0 +1,20 @@
+I have a firewall that I need to give users the ability to add/remove addresses from it without logging into the appliance. For simplicity, I've hard coded a customername and a list of ip addresses. As the application goes through adding/removing, it needs to keep track of the customername.
+
+If I can get a python list of items, I can then use another python module to ssh into the appliance.
+
+Please use Flask, Python, Jinja, Bootstrap, Javascript
+
+
+So I want to pass in the list of addresses to the .html page.
+
+On the page I want a list of checkboxes and some text fields.
+
+The list of checkboxes will show all of the addresses. The user can check which ones they want to remove.
+
+They can type in up to five IP addresses to add.
+
+They click submit and the things that are checked needs to be passed back to flask so I can process it.
+
+The things they type on the text fields needs to be sent back in a separate list so I can process it.
+
+Send the lists and send the customername back to flask and store in new variables

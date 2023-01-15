@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">  
+</head>
+<!-- #### Code for removing items via checkbox/submit button.  User clicks submit and it passes customername and ip addresses to app.route /remotelistitems -->
+<div class="container">
+  <h2 class="text-center">  {{ customername }} </h2>
+  <div class="row">      
+    <div class="col-sm-4"></div>
+    <div class="col-sm-3">
+
+      <form action="/removeaddress" method="POST">
+        
+          {% for address in addresses %}
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" name="existing_{{address}}"></input>
+              <label for="existing_{{address}}" class="form-check-label">{{address}}</label>
+            </div>
+          {% endfor %}
+          
+          <div class="form-group mx-auto">
+            <button type="submit" [disabled]="!name" class="btn btn-secondary">Remove</button>
+          </div>
+      </form>
+    </div>
+    <div class="col-sm-2">
+      <form action="/additems" method="post">
+        <div class="form-group">
+          <input type="text" class="form-control" name="address1" placeholder="New IP Address"/>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="address2" placeholder="New IP Address"/>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="address3" placeholder="New IP Address"/>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="address4" placeholder="New IP Address"/>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="address5" placeholder="New IP Address"/>
+        </div>
+        <div class="form-group">
+          <button type="submit" name="addaddress" class="btn btn-secondary">Add</button>
+        </div>
+      </form>
+    </div>
+    </div>
+    </div>
+
